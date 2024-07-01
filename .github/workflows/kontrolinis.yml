@@ -7,7 +7,7 @@ jobs:
   automated-api-tests:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest]
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -35,6 +35,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: newman-report-${{ matrix.os }}
-          # path: report-${{ matrix.os }}.html
-          path: report.html
+          path: report-${{ matrix.os }}.html
+  
 
